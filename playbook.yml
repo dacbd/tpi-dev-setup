@@ -1,0 +1,9 @@
+---
+- name: setup
+  hosts: localhost
+  become: true
+  roles:
+    - docker
+    - awscli
+    - golang
+    - nodejs
