@@ -2,8 +2,22 @@
 - name: setup
   hosts: localhost
   become: true
-  roles:
-    - docker
-    - awscli
-    - golang
-    - nodejs
+  tasks:
+    - apt:
+        update_cache: true
+        pkg:
+          - python-is-python3
+          - python3-pip
+          - pipenv
+    - include_role:
+        name: nvidia.nvidia_driver
+      vars:
+        nvidia_driver_skip_reboot: true
+    - include_role:
+        name: docker
+    - include_role:
+        name: awscli
+    - include_role:
+        name: golang
+    - include_role:
+        name: nodejs
