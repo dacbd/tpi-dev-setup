@@ -10,10 +10,6 @@
           - python3-pip
           - pipenv
     - include_role:
-        name: nvidia.nvidia_driver
-      vars:
-        nvidia_driver_skip_reboot: true
-    - include_role:
         name: docker
     - include_role:
         name: awscli
@@ -21,3 +17,7 @@
         name: golang
     - include_role:
         name: nodejs
+    - include_role:
+        name: nvidia.nvidia_driver
+      vars:
+        nvidia_driver_skip_reboot: false
