@@ -22,7 +22,7 @@
         update_cache: true
         pkg: 
           - nodejs
-    - include_role:
-        name: nvidia.nvidia_driver
-      vars:
-        nvidia_driver_skip_reboot: true
+    #- include_role:
+    #    name: nvidia.nvidia_driver
+    #  vars:
+    #    nvidia_driver_skip_reboot: true
